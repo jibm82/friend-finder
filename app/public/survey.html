@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Friend finder</title>
+</head>
+
+<body class="survey bg-light">
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
+    <h4 class="my-0 font-weight-bold">
+      <a href="/" class="logo">Friend finder</a>
+    </h4>
+  </div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <div class="py-5 text-center">
+        <h1>Answer each question to find a new friend</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <form id="survey-form" action="/api/friends" novalidate>
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="section-header mb-3">
+            Your info
+          </h4>
+          <label>Name (Required)</label>
+          <input type="text" name="name" class="form-control" required>
+
+          <label>Link to Photo Image (Required)</label>
+          <input type="text" name="photo" class="form-control" required>
+
+        </div>
+        <div class="col-md-8 order-md-1">
+          <h4 class="section-header mb-3">Survey questions</h4>
+          <div class="row">
+            <div class="col-12">
+              <ul class="list-unstyled">
+                <li class="question media">
+                  <span class="question-number mr-3">Q1</span>
+                  <div class="media-body">
+                    <label>
+                      Your mind is always buzzing with unexplored ideas and plans.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="question media">
+                  <span class="question-number mr-3">Q2</span>
+                  <div class="media-body">
+                    <label>
+                      Generally speaking, you rely more on your experience than your imagination.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="question media">
+                  <span class="question-number mr-3">Q3</span>
+                  <div class="media-body">
+                    <label>
+                      You find it easy to stay relaxed and focused even when there is some pressure.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="question media">
+                  <span class="question-number mr-3">Q4</span>
+                  <div class="media-body">
+                    <label>
+                      You rarely do something just out of sheer curiosity.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="question media">
+                  <span class="question-number mr-3">Q5</span>
+                  <div class="media-body">
+                    <label>
+                      People can rarely upset you.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="question media">
+                  <span class="question-number mr-3">Q6</span>
+                  <div class="media-body">
+                    <label>
+                      It is often difficult for you to relate to other people’s feelings.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="question media">
+                  <span class="question-number mr-3">Q7</span>
+                  <div class="media-body">
+                    <label>
+                      In a discussion, truth should be more important
+                      than people’s sensitivities.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="question media">
+                  <span class="question-number mr-3">Q8</span>
+                  <div class="media-body">
+                    <label>
+                      You rarely get carried away by fantasies and ideas.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="question media">
+                  <span class="question-number mr-3">Q9</span>
+                  <div class="media-body">
+                    <label>
+                      You think that everyone's views should be respected
+                      regardless of whether they are supported by facts or not.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="question media">
+                  <span class="question-number mr-3">Q10</span>
+                  <div class="media-body">
+                    <label>
+                      You feel more energetic after spending time with a group of people.
+                    </label>
+                    <select class="form-control w-auto" name="scores[]" required>
+                      <option value=""></option>
+                      <option value="1">1 (Strongly Disagree)</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                  </div>
+                </li>
+              </ul>
+              <hr class="mb-4">
+              <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+                Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="/api/friends">API Friends list</a>
+        </li>
+        <li class="list-inline-item">|</li>
+        <li class="list-inline-item">
+          <a href="https://github.com/jibm82/friend-finder">View on Github</a>
+        </li>
+        <li class="list-inline-item">|</li>
+        <li class="list-inline-item">
+          <a href="https://jibm82.github.io">My portfolio</a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.29.0/sweetalert2.all.js"></script>
+  <script src="/javascript/survey.js"></script>
+</body>
+
+</html>

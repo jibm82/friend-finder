@@ -7,23 +7,31 @@ $(document).ready(() => {
 
       $.post(url, formData(form), (res) => {
         let friend = res.friend;
-        swal({
-          title: 'Your best match is',
-          text: friend.name,
-          imageUrl: friend.photo,
-          imageAlt: friend.name,
-          animation: false
-        });
+
+        if (friend !== undefined) {
+          displayFriend(friend);
+        } else {
+          displayNoMatch();
+        }
+        $(".form-control").val("");
+      }).fail((err) => {
+        displayError(err);
       });
     } else {
       swal({
-        title: 'Error!',
-        text: 'You need to fill out all the fields in order to submit',
-        type: 'error',
-        confirmButtonText: 'Ok'
+        title: "Error!",
+        text: "You need to fill out all the fields in order to submit",
+        type: "error",
+        confirmButtonText: "Ok"
       })
     }
   });
+
+  function validateForm() {
+    return $(".form-control").toArray().every((field) => {
+      return $(field).val().trim() !== ""
+    });
+  }
 
   function formData(form) {
     let formData = { scores: [] };
@@ -39,9 +47,29 @@ $(document).ready(() => {
     return formData;
   }
 
-  function validateForm() {
-    return $(".form-control").toArray().every((field) => {
-      return $(field).val().trim() !== ""
+  function displayNoMatch() {
+    swal({
+      title: "No matches found",
+      text: "There are no matches",
+      type: "Error"
+    });
+  }
+
+  function displayFriend(friend) {
+    swal({
+      title: "Your best match is",
+      text: friend.name,
+      imageUrl: friend.photo,
+      imageAlt: friend.name,
+      animation: false
+    });
+  }
+
+  function displayError(errorMessage) {
+    swal({
+      title: "Error",
+      text: errorMessage,
+      type: "Error"
     });
   }
 });

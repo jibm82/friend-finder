@@ -1,0 +1,27 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "Node JS Web Application to find friends",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jibm82/friend-finder.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "express"
+  ],
+  "author": "Jorge Baez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jibm82/friend-finder/issues"
+  },
+  "homepage": "https://github.com/jibm82/friend-finder#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
